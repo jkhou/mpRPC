@@ -1,0 +1,13 @@
+/home/hjk/Desktop/mprpc/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/hjk/Desktop/mprpc/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/hjk/Desktop/mprpc/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir
+/home/hjk/Desktop/mprpc/cmake-build-debug/src/CMakeFiles/edit_cache.dir
+/home/hjk/Desktop/mprpc/cmake-build-debug/src/CMakeFiles/mprpc.dir
+/home/hjk/Desktop/mprpc/cmake-build-debug/example/CMakeFiles/rebuild_cache.dir
+/home/hjk/Desktop/mprpc/cmake-build-debug/example/CMakeFiles/edit_cache.dir
+/home/hjk/Desktop/mprpc/cmake-build-debug/example/callee/CMakeFiles/rebuild_cache.dir
+/home/hjk/Desktop/mprpc/cmake-build-debug/example/callee/CMakeFiles/edit_cache.dir
+/home/hjk/Desktop/mprpc/cmake-build-debug/example/callee/CMakeFiles/provider.dir
+/home/hjk/Desktop/mprpc/cmake-build-debug/example/caller/CMakeFiles/edit_cache.dir
+/home/hjk/Desktop/mprpc/cmake-build-debug/example/caller/CMakeFiles/rebuild_cache.dir
+/home/hjk/Desktop/mprpc/cmake-build-debug/example/caller/CMakeFiles/consumer.dir
