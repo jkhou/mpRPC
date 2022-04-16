@@ -105,5 +105,6 @@ Zookeeper是在分布式环境中应用非常广泛,它的优秀功能很多,比
 - **(1)** 初始化 RPC 远程调用要连接的服务器;
 - **(2)** 定义一个 UserSeervice 的 stub 桩类，由这个装类去调用Login方法.
 
-
+## mpRPC框架整体流程
+![git-command.jpg](mpRPC-process.png)
 
