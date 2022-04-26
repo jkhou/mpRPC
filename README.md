@@ -1,8 +1,6 @@
 # mpRPC
 **简介**: 基于protobuf和zookeeper实现的分布式网络通信RPC框架, 网络模块基于muduo实现，并使用消息队列管理异步日志系统。
 
-RPC:Remote Process Call.
-
 ## RPC框架的设计
 RPC的全称是**远程过程调用**（Remote Procedure Call）。
 
