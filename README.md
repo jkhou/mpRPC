@@ -26,6 +26,9 @@ RPC的全称是**远程过程调用**（Remote Procedure Call）。
 - **Caller**: 将请求方法和请求参数经过**序列化**之后，通过网络模块发送给被调用方Callee；将接收到的服务调用结果**反序列化**
 - **Callee**: 将接受的请求方法和参数**反序列化**之后，计算方法调用结果；将结果**序列化**之后，通过网络模块发送给Caller
 
+- **黄色部分**: 设计rpc方法参数的打包和解析,也就是数据的序列化和反序列化,使用Protobuf。
+- **绿色部分**: 网络部分,包括寻找rpc服务主机,发起rpc调用请求和响应rpc调用结果,使用muduo网络库和zookeeper服务配置中心。
+
 ## protobuf
 protobuf 主要是作为整个框架的**传输协议**。看一下整个框架对于传输信息的格式定义：
 ``` proto
@@ -53,6 +56,10 @@ https://github.com/google/protobuf
 - 5、配置环境:./configure
 - 6、编译源代码(时间比较长):make7、安装:sudo make install
 - 7、刷新动态库:sudo ldconfig
+
+### protobuf vs json：
+- 1.protobuf是二进制存储你，xml和json是文本存储；
+- 2.protobuf不需要额外的存储信息，json是key-value存储方式，会存储额外的信息。
 
 ## zookeeper
 Zookeeper是在分布式环境中应用非常广泛,它的优秀功能很多,比如分布式环境中全局命名服务,服务注册中心,全局分布式锁等等。
