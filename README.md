@@ -43,6 +43,45 @@ service UserServiceRpc
     rpc Register(RegisterRequest) returns(RegisterResponse);
 }
 ```
+### rpc服务提供方
+``` c++
+  class UserServiceRpc : public ::PROTOBUF_NAMESPACE_ID::Service
+  // 这两个方法是纯虚函数，作为基类
+  virtual void Login(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::fixbug::LoginRequest* request,
+                       ::fixbug::LoginResponse* response,
+                       ::google::protobuf::Closure* done);
+
+  virtual void GetFriendLists(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::fixbug::GetFriendListsRequest* request,
+                       ::fixbug::GetFriendListsResponse* response,
+                       ::google::protobuf::Closure* done);
+
+  const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* GetDescriptor();
+```
+
+### rpc服务消费方
+``` c++
+  class UserServiceRpc_Stub : public UserServiceRpc
+  // 庄类，其输入是一个RpcChannel类对象
+  UserServiceRpc_Stub(::PROTOBUF_NAMESPACE_ID::RpcChannel* channel);
+  //　rpc服务提供方基类的派生类，重写这两种函数
+  void Login(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::fixbug::LoginRequest* request,
+                       ::fixbug::LoginResponse* response,
+                       ::google::protobuf::Closure* done);
+
+  void GetFriendLists(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::fixbug::GetFriendListsRequest* request,
+                       ::fixbug::GetFriendListsResponse* response,
+                       ::google::protobuf::Closure* done);
+```
+这两种方法的底层调用都是：
+``` c++
+channel_->CallMethod(descriptor()->method(0), controller, request, response, done);
+```
+CallMethod是RpcChannel的一个抽象类，需要自己去定义一个派生类，重写CallMethod方法，从而通过基类指针指向派生类对象,实现多态
+
 它定义了要**调用方法是属于哪个类的哪个方法以及这个方法所需要的的参数大小**。
 
 ### protobuf安装步骤：
