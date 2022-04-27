@@ -127,6 +127,10 @@ Zookeeper是在分布式环境中应用非常广泛,它的优秀功能很多,比
 
 ![git-command.jpg](https://img2018.cnblogs.com/blog/1672215/201906/1672215-20190616153220003-32958374.png)
 
+### znode
+- **临时性节点**：rpc节点超时未发送心跳消息，zookeeper会自动删除临时性节点
+- **永久性节点**：rpc节点超时未发送心跳消息，zookeeper会不会删除永久性节点
+
 ## RPC框架服务提供方
 ``` c++
     RpcApplication::init(argc, argv);
